@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
+    <link href="./css/base.css" rel="stylesheet" type="text/css">
+    <link href="./css/reset.css" rel="stylesheet" type="text/css">
+    
+    <link href="./css/mobile_sub.css" rel="stylesheet" type="text/css">
+    
+    
+    
+    <!-- 플렉스 슬라이드 css서식 -->
+    <link href="./css/flexslider.css" rel="stylesheet" type="text/css">
+
+  <!-- 제이쿼리 라이브러리 언어(스크립트 순서 중에서 제일 위에 있어야 동작한다.) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+   
+    <!-- 플렉스 슬라이드 제이쿼리 소스 -->
+    <script src="./script/jquery.flexslider.js"></script>
+    
+    <!-- 아이콘폰트 4버전 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- 아이콘 폰트 주소 -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    
+<!--    <script src="jquery-3.5.1.js"></script>-->
+    
+    
+    <script>
+        $(document).ready(function() {
+
+            $('aside').hide(); //top버튼 안보이게 숨기기
+
+            //브라우저 창에서 스크롤 바가 동작하면 아래 내용을 실행한다.
+            $(window).scroll(function() {
+                var spos = $(window).scrollTop(); //윈도우의 스크롤 높이값을 설정한다.
+                console.log(spos); //스크롤 동작시 스크롤 높이값 출력하기
+
+                if (spos >= 500) { //만약에 스크롤 높이값이 200(1080)이상이 되면
+                    $('aside').fadeIn(); //aside 자연스럽게 나오게 하고
+                } else { //그렇지 않으면
+                    $('aside').fadeOut(); //aside를 다시 자연스럽게 사라지게 한다.
+                }
+            });
+
+            //top버튼 클릭시 자연스럽게 상단으로 올라가기
+            $('aside a').click(function() {  
+                $('html, body').animate({
+                    scrollTop: '0px'
+                }, 300);
+                return false; //새로고침이 안되게 해준다.
+            });
+            
+//            $('header a').click(function(){
+//               return false; 
+//            });
+
+        });
+    </script>
+    
+    <title>bbq_sub페이지_bestmenu</title>
+    
+    
+</head>
+    
+<body>
+   
+<!--   <input type="checkbox" id="toggle">-->
+   <!--헤더영역-->
+<!--
+   <header>
+       <label for="toggle"><img src="img/main/toggle_button.png" class="toggle_img" alt="토글버튼"></label>
+       
+       <h1>
+       <a href="index.html" title="logo"><img src="img/logo.png" alt="로고이미지" class="logo"></a>
+       </h1>
+       
+       <a href="a.html" title=""><img src="img/main/cart.svg" alt="장바구니" class="cart_img"></a>
+   </header>
+-->
+   
+   <input type="checkbox" id="toggle">
+   <!--헤더영역-->
+   <header>
+       <div class="h_inner">
+           <label for="toggle"><img src="img/main/toggle_button.png" class="toggle_img" alt="토글버튼"></label>
+           
+           <h1>
+           <a href="index.html" title="">
+           <img src="img/logo.png" alt="로고이미지" >
+           </a>
+           </h1>
+           
+           
+           <a href="a.html" title=""><img src="img/main/cart.svg" alt="장바구니" class="cart_img"></a>
+       </div>
+       
+       <!-- 글로벌 내비게이션 -->
+        <nav class="gnb">
+            <ul>
+                <li>
+                   <a href="a.html" title="설정버튼"><i class="fa fa-gear"></i></a>
+                   
+                    <div>
+                     <img src="./img/main/meat.png" alt="치킨이미지">
+                     </div>
+                     
+                    <label for="toggle"><i class="fas fa-times"></i></label>
+                </li>
+                <li>
+                   <ul>
+                       <li>
+                        <a href="./login.html" title="">로그인</a>
+                        </li>
+                        <li>
+                        <a href="./join.html" title="회원가입하기">회원가입</a>
+                       </li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="menu_2depth">
+                    <a href=#none title="메뉴">메뉴
+                        <label class="fas fa-plus" for="menu_2depth"></label>
+                    </a>
+                    <ul class="sub_menu">
+                        <li><a href="a.html" title="">전체</a></li>
+                        <li><a href="sub_bestmenu.html" title="">인기메뉴</a></li>
+                        <li><a href="a.html" title="">핫황금올리브</a></li>
+                        <li><a href="a.html" title="">순수하게후라이드</a></li>
+                        <li><a href="a.html" title="">다양하게양념</a></li>
+                        <li><a href="a.html" title="">섞어먹자반반</a></li>
+                        <li><a href="a.html" title="">구어먹는비비큐</a></li>
+                        <li><a href="a.html" title="">사이드메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="event_2depth">
+                    <a href=#none title="이벤트">이벤트<label class="fas fa-plus" for="event_2depth"></label>
+                    </a>
+                    <ul class="sub_event">
+                        <li>
+                            <a href="a.html" title="">진행중인 이벤트</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">당첨자 발표</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">지난 이벤트</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="a.html" title="매장">매장</a>
+                </li>
+                <li><a href="a.html" title="단체주문">단체주문</a></li>
+                <li><a href="a.html" title="비회원&주문조회">비회원주문조회</a></li>
+                <li><a href="a.html" title="쿠폰등록/보관">쿠폰등록/보관</a></li>
+                <li><a href="a.html" title="브랜드">브랜드</a></li>
+                <li>
+                    <input type="checkbox" id="brandstory_2depth">
+                    <a href=#none title="브랜드스토리">브랜드스토리<label class="fas fa-plus" for="brandstory_2depth"></label></a>
+                    <ul class="sub_brandstory">
+                        <li>
+                            <a href="a.html" title="">비비큐 이야기</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">올리브 이야기</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">영상콘텐츠</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="customer_2depth">
+                    <a href=#none title="고객센터">고객센터<label class="fas fa-plus" for="customer_2depth"></label></a>
+                    <ul class="sub_customer">
+                        <li>
+                            <a href="a.html" title="">자주하는 질문</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">고객의소리</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">공지사항</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="a.html" title="전화주문">전화주문</a></li>
+            </ul>
+        </nav>
+    
+    
+    
+    <!--콘텐츠영역-->
+    <section>
+        <nav class="s_gnb">
+            <ul>
+                <li><a href="a.html" title="">전체</a></li>
+                <li><a href="a.html" title="">인기메뉴</a></li>
+                <li><a href="a.html" title="">핫황금올리브</a></li>
+                <li><a href="a.html" title="">순수하게후라이드</a></li>
+                <li><a href="a.html" title="">다양하게양념</a></li>
+                <li><a href="a.html" title="">섞어먹자반반</a></li>
+                <li><a href="a.html" title="">구어먹는비비큐</a></li>
+                <li><a href="a.html" title="">사이드메뉴</a></li>
+            </ul>
+        </nav>
+        
+        <input type="search" placeholder="검색어를 입력해주세요." autofocus id="search"><label for="search">검색</label>
+        
+        <ul class="bestmenu_list">
+            <li>
+                <a href="a.html" title=""><img src="./img/sub/%ED%95%AB%ED%99%A9%EA%B8%88%EC%98%AC%EB%A6%AC%EB%B8%8C.png" alt="황금올리브">
+                </a>
+                <p>
+                    핫황금올리브 크리스피 <br>
+                    <span>19,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="" class="menu_order">장바구니</a>
+                <a href="a.html" title="" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title=""><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%ED%95%AB%ED%99%A9%EA%B8%88%EC%98%AC%EB%A6%AC%EB%B8%8C-%EB%8B%A8%ED%92%88%EB%A5%98)_%EB%A0%88%EB%93%9C%EC%B0%A9%EC%B0%A9.png" alt="치킨이미지">
+                </a>
+                <p>
+                    핫황금올리브 레드착착 <br>
+                    <span>19,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="" class="menu_order">장바구니</a>
+                <a href="a.html" title="" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title=""><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%ED%95%AB%ED%99%A9%EA%B8%88%EC%98%AC%EB%A6%AC%EB%B8%8C-%EB%8B%A8%ED%92%88%EB%A5%98)_%EB%B8%94%EB%9E%99%ED%8E%98%ED%8D%BC.png" alt="치킨이미지">
+                </a>
+                <p>
+                    핫황금올리브 블랙페퍼 <br>
+                    <span>19,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="장바구니" class="menu_order">장바구니</a>
+                <a href="a.html" title="주문하기" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title="핫올 찐킹소스"><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%ED%95%AB%ED%99%A9%EA%B8%88%EC%98%AC%EB%A6%AC%EB%B8%8C-%EB%8B%A8%ED%92%88%EB%A5%98)_%EC%B0%90%ED%82%B9%EC%86%8C%EC%8A%A4.png" alt="치킨이미지">
+                </a>
+                <p>
+                    핫황금올리브 찐킹소스 <br>
+                    <span>20,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="장바구니" class="menu_order">장바구니</a>
+                <a href="a.html" title="주문하기" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title="자메이카 통다리구이"><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%EA%B7%B8%EB%A6%B4%EB%A5%98)__%EC%9E%90%EB%A9%94%EC%9D%B4%EC%B9%B4%ED%86%B5%EB%8B%A4%EB%A6%AC%EA%B5%AC%EC%9D%B4.png" alt="치킨이미지">
+                </a>
+                <p>
+                    자메이카 통다리구이 <br>
+                    <span>19,500원</span>
+                </p>
+                <div>
+                <a href="#" title="" class="menu_order">장바구니</a>
+                <a href="#" title="" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title="스모크치킨"><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%EA%B7%B8%EB%A6%B4%EB%A5%98)_%EC%8A%A4%EB%AA%A8%ED%81%AC%EC%B9%98%ED%82%A8.png" alt="치킨이미지">
+                </a>
+                <p>
+                    스모크치킨 <br>
+                    <span>17,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="장바구니" class="menu_order">장바구니</a>
+                <a href="a.html" title="주문하기" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title="핫올 콤보반반"><img src="./img/sub/20200707_BBQ_%EB%AA%A8%EB%B0%94%EC%9D%BC-%EC%8D%B8%EB%84%A4%EC%9D%BC_%ED%95%AB-%EC%BD%A4%EB%B3%B4-6%EC%A2%85.png" alt="치킨이미지">
+                </a>
+                <p>
+                    핫황금올리브™콤보반반 <br>
+                    (레드착착+블랙페퍼) 
+                   <br>
+                    <span>19,000원</span>
+                </p>
+                <div>
+                    <a href="a.html" title="장바구니" class="menu_order">장바구니</a>
+                    <a href="#" title="주문하기" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title="핫올 콤보반반"><img src="./img/sub/20200707_BBQ_%EB%AA%A8%EB%B0%94%EC%9D%BC-%EC%8D%B8%EB%84%A4%EC%9D%BC_%ED%95%AB-%EC%BD%A4%EB%B3%B4-6%EC%A2%85-04.png" alt="치킨이미지">
+                </a>
+                <p>
+                    핫황금올리브™콤보반반 <br>
+                    (레드착착+크리스피) 
+                   <br>
+                    <span>19,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="장바구니" class="menu_order">장바구니</a>
+                <a href="a.html" title="주문하기" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+        </ul>
+        
+        <input type="checkbox" id="menu_list">
+        <label for="menu_list">
+            <img src="./img/sub/plus_button.png" alt="플러스버튼" class="plus_button">
+            <img src="./img/sub/minus_button.png" alt="마이너스버튼" class="minus_button">
+        </label>
+        
+        <ul class="bestmenu_list2">
+            <li>
+                <a href="a.html" title="오리지널 콤보반반"><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%EC%98%A4%EB%A6%AC%EC%A7%80%EB%82%A0%EC%BD%A4%EB%B3%B4%EC%84%B8%ED%8A%B8)_%ED%99%A9%EC%98%AC%EC%B0%90%ED%82%B9%EC%86%8C%EC%8A%A4.png" alt="치킨이미지">
+                </a>
+                <p>
+                    오리지널 콤보반반<br>
+                    (황금올리브™+찐킹소스) 
+                    <span>19,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="장바구니" class="menu_order">장바구니</a>
+                <a href="a.html" title="주문하기" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title="오리지널 콤보반반"><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%EC%98%A4%EB%A6%AC%EC%A7%80%EB%82%A0%EC%BD%A4%EB%B3%B4%EC%84%B8%ED%8A%B8)_%ED%99%A9%EC%98%AC%EB%B8%94%EB%9E%99%ED%8E%98%ED%8D%BC.png" alt="치킨이미지">
+                </a>
+                <p>
+                    오리지널 콤보반반<br>
+                    (황금올리브™+블랙페퍼)
+ 
+                    <span>19,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="장바구니" class="menu_order">장바구니</a>
+                <a href="a.html" title="주문하기" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="a.html" title="오리지널 콤보반반"><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%EC%98%A4%EB%A6%AC%EC%A7%80%EB%82%A0%EC%BD%A4%EB%B3%B4%EC%84%B8%ED%8A%B8)_%ED%99%A9%EC%98%AC%EB%A0%88%EB%93%9C%EC%B0%A9%EC%B0%A9.png" alt="치킨이미지
+                ">
+                </a>
+                <p>
+                    오리지널 콤보반반<br>
+                    (황금올리브™+레드착착)
+
+                    <span>19,000원</span>
+                </p>
+                <div>
+                <a href="a.html" title="장바구니" class="menu_order">장바구니</a>
+                <a href="a.html" title="주문하기" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+            <li>
+                <a href="#" title=""><img src="./img/sub/20200717_BBQ_%EC%95%B1_%EC%8D%B8%EB%84%A4%EC%9D%BC(%EC%98%A4%EB%A6%AC%EC%A7%80%EB%82%A0%EC%BD%A4%EB%B3%B4%EC%84%B8%ED%8A%B8)_%ED%99%A9%EC%98%AC%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%94%BC.png" alt="치킨이미지">
+                </a>
+                <p>
+                    오리지널 콤보반반<br>
+                    (황금올리브™+크리스피)
+ 
+                    <span>19,000원</span>
+                </p>
+                <div>
+                <a href="#" title="" class="menu_order">장바구니</a>
+                <a href="#" title="" class="menu_order">주문하기</a>
+                </div>
+                
+            </li>
+            
+        </ul>
+        
+        
+        
+    </section>
+    
+    
+    
+     <!--푸터영역-->
+   <footer>
+      <div class="footer_inner">
+       <ul class="f_lnb">
+           <li><a href="#" title="">개인정보취급방침</a></li>
+           <li><a href="#" title="">이용약관</a></li>
+           <li><a href="#" title="">멤버십 약관</a></li>
+       </ul>
+       
+       <p>
+         주식회사 제너시스 비비큐 <br>
+         주소:서울시 000 0000 <br>
+         대표자:000 <br>
+         통신판매업신고:2010-0000-0000호 <br>
+         사업자등록번호:000-00-00000 <br>
+         고객센터:000-0000-0000
+       </p>
+       
+       <address>Copyright 2020&copy;GENESIS BBQ. All rights reserved.</address>
+      </div>
+      
+      <aside><a href="#top" title="위로바로가기"><img src="./img/main/top%EB%B2%84%ED%8A%BC.png" alt="위로가기"></a></aside>
+   </footer>
+    
+</body>
+    
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

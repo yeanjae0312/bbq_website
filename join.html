@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <link href="./css/base.css" rel="stylesheet" type="text/css">
+    <link href="./css/reset.css" rel="stylesheet" type="text/css">
+
+    <link href="./css/mobile_join.css" rel="stylesheet" type="text/css">
+
+    <!-- 플렉스 슬라이드 css서식 -->
+    <link href="./css/flexslider.css" rel="stylesheet" type="text/css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!-- 제이쿼리 라이브러리 언어(스크립트 순서 중에서 제일 위에 있어야 동작한다.) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- 플렉스 슬라이드 제이쿼리 소스 -->
+    <script src="./script/jquery.flexslider.js"></script>
+
+
+    <!-- 아이콘 폰트 주소 -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <title>회원가입 화면</title>
+
+
+</head>
+
+<body>
+    
+
+    <!-- 헤더영역 -->
+    <header>
+        <a href="index.html" title="닫기버튼">
+            <img src="./img/login/close_button.svg" alt="닫기버튼">
+        </a>
+
+        <div class="h_inner">
+            <a href="index.html" title="로고">
+                <img src="./img/login/logo.png" alt="로고">
+            </a>
+        </div>
+    </header>
+
+
+    <!-- 섹션영역 -->
+    <section>
+        <div class="s_inner">
+
+            <div>
+                <input type="text" placeholder="아이디" required id="l_id"><label for="l_id"></label>
+
+                <input type="password" maxlength="16" placeholder="비밀번호" required id="l_pw"><label for="l_pw"></label>
+
+                <input type="password" maxlength="16" placeholder="비밀번호재입력" required id="l_pw"><label for="l_pw"></label>
+
+                <input type="text" placeholder="이름" required id="l_name"><label for="l_name"></label>
+
+                <div class="birth">
+                    <input type="text" placeholder="생년월일" required class="birth" id="l_birth"><label for="l_birth"></label>
+
+                    <span class="amore">
+                        <input type="radio" name="a" id="r02"><label for="r02">
+                        남</label>
+                        <input type="radio" name="a" id="r03" checked><label for="r03">여</label>
+                    </span>
+                </div>
+
+                <input type="number" placeholder="전화번호" required id="l_number"><label for="l_number"></label>
+
+                <input type="text" placeholder="이메일 주소" id="l_email"><label for="l_email"></label>
+            </div>
+
+            <hr>
+
+            <div class="address_box">
+                <p>선택 입력</p>
+                
+                <div class="address_button">
+                    <input type="text" placeholder="주소찾기 선택" id="l_address"><label for="l_address"></label>
+                    <input type="button" value="주소찾기">
+                </div>
+
+            </div>
+
+
+            <input type="button" value="가입" class="join_button">
+
+        </div>
+    </section>
+
+
+    <!-- 푸터영역 -->
+    <footer></footer>
+
+
+
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

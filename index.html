@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
+    <link href="./css/base.css" rel="stylesheet" type="text/css">
+    <link href="./css/reset.css" rel="stylesheet" type="text/css">
+    
+    <link href="./css/mobile.css" rel="stylesheet" type="text/css">
+    
+    <!-- 플렉스 슬라이드 css서식 -->
+    <link href="./css/flexslider.css" rel="stylesheet" type="text/css">
+    <!-- 아이콘폰트 4버전 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--    <script src="http://code.jquery.com/jquery-latest.js"></script>-->
+<!--    <script src="./script/jquery.min.js"></script>-->
+    
+    
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+<!--    <script src="script/jquery-3.5.1.js"></script>-->
+  
+    
+    <!-- 플렉스 슬라이드 제이쿼리 소스 -->
+    <script src="./script/jquery.flexslider.js"></script>
+    
+    <!-- 아이콘 폰트 주소 -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            $('aside').hide(); //top버튼 안보이게 숨기기
+
+            //브라우저 창에서 스크롤 바가 동작하면 아래 내용을 실행한다.
+            $(window).scroll(function() {
+                var spos = $(window).scrollTop(); //윈도우의 스크롤 높이값을 설정한다.
+                console.log(spos); //스크롤 동작시 스크롤 높이값 출력하기
+
+                if (spos >= 500) { //만약에 스크롤 높이값이 200(1080)이상이 되면
+                    $('aside').fadeIn(); //aside 자연스럽게 나오게 하고
+                } else { //그렇지 않으면
+                    $('aside').fadeOut(); //aside를 다시 자연스럽게 사라지게 한다.
+                }
+            });
+
+            //top버튼 클릭시 자연스럽게 상단으로 올라가기
+            $('aside a').click(function() {  
+                $('html, body').animate({
+                    scrollTop: '0px'
+                }, 300);
+                return false; //새로고침이 안되게 해준다.
+            });
+            
+//            $('header a').click(function(){
+//               return false; 
+//            });
+
+        });
+    </script>
+    
+    <title>bbq UI 메인화면</title>
+    
+    
+</head>
+    
+<body>
+   
+   <input type="checkbox" id="toggle">
+   <!--헤더영역-->
+   <header>
+       <div class="h_inner">
+           <label for="toggle"><img src="img/main/toggle_button.png" class="toggle_img" alt="토글버튼"></label>
+           
+           <h1>
+           <a href="index.html" title="">
+           <img src="img/logo.png" alt="로고이미지" >
+           </a>
+           </h1>
+           
+           
+           <a href="a.html" title=""><img src="img/main/cart.svg" alt="장바구니" class="cart_img"></a>
+       </div>
+       
+       <!-- 글로벌 내비게이션 -->
+        <nav class="gnb">
+            <ul>
+                <li>
+                   <a href="a.html" title="설정버튼"><i class="fa fa-gear"></i></a>
+                   
+                    <div>
+                     <img src="./img/main/meat.png" alt="치킨이미지">
+                     </div>
+                     
+                    <label for="toggle"><i class="fas fa-times"></i></label>
+                </li>
+                <li>
+                   <ul>
+                       <li>
+                        <a href="./login.html" title="">로그인</a>
+                        </li>
+                        <li>
+                        <a href="./join.html" title="회원가입하기">회원가입</a>
+                       </li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="menu_2depth">
+                    <a href=#none title="메뉴">메뉴
+                        <label class="fas fa-plus" for="menu_2depth"></label>
+                    </a>
+                    <ul class="sub_menu">
+                        <li><a href="a.html" title="">전체</a></li>
+                        <li><a href="sub_bestmenu.html" title="">인기메뉴</a></li>
+                        <li><a href="a.html" title="">핫황금올리브</a></li>
+                        <li><a href="a.html" title="">순수하게후라이드</a></li>
+                        <li><a href="a.html" title="">다양하게양념</a></li>
+                        <li><a href="a.html" title="">섞어먹자반반</a></li>
+                        <li><a href="a.html" title="">구어먹는비비큐</a></li>
+                        <li><a href="a.html" title="">사이드메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="event_2depth">
+                    <a href=#none title="이벤트">이벤트<label class="fas fa-plus" for="event_2depth"></label>
+                    </a>
+                    <ul class="sub_event">
+                        <li>
+                            <a href="a.html" title="">진행중인 이벤트</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">당첨자 발표</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">지난 이벤트</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="a.html" title="매장">매장</a>
+                </li>
+                <li><a href="a.html" title="단체주문">단체주문</a></li>
+                <li><a href="a.html" title="비회원&주문조회">비회원주문조회</a></li>
+                <li><a href="a.html" title="쿠폰등록/보관">쿠폰등록/보관</a></li>
+                <li><a href="a.html" title="브랜드">브랜드</a></li>
+                <li>
+                    <input type="checkbox" id="brandstory_2depth">
+                    <a href=#none title="브랜드스토리">브랜드스토리<label class="fas fa-plus" for="brandstory_2depth"></label></a>
+                    <ul class="sub_brandstory">
+                        <li>
+                            <a href="a.html" title="">비비큐 이야기</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">올리브 이야기</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">영상콘텐츠</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="customer_2depth">
+                    <a href=#none title="고객센터">고객센터<label class="fas fa-plus" for="customer_2depth"></label></a>
+                    <ul class="sub_customer">
+                        <li>
+                            <a href="a.html" title="">자주하는 질문</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">고객의소리</a>
+                        </li>
+                        <li>
+                            <a href="a.html" title="">공지사항</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="a.html" title="전화주문">전화주문</a></li>
+            </ul>
+        </nav>
+       
+       <nav class="gnb_bottom">
+            <ul>
+                <li>
+                    <a href="a.html" title="배달주문">
+                        <img src="./img/main/%EB%B0%B0%EB%8B%AC%EC%95%84%EC%9D%B4%EC%BD%98.svg" alt="배달주문">
+                        <span>배달주문</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a.html" title="포장주문">
+                        <img src="./img/main/%ED%8F%AC%EC%9E%A5icon.svg" alt="포장주문">
+                        <span>포장주문</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a.html" title="쿠폰주문">
+                        <img src="./img/main/%EC%BF%A0%ED%8F%B0icon%20(1).svg" alt="쿠폰주문">
+                        <span>쿠폰주문</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a.html" title="최근주문">
+                        <img src="./img/main/%EC%B9%98%ED%82%A8icon.svg" alt="최근주문">
+                        <span>최근주문</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a.html" title="선물하기">
+                        <img src="./img/main/%EC%84%A0%EB%AC%BCicon.svg" alt="선물하기">
+                        <span>선물하기</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+       
+   </header>
+   
+   
+   <!--콘텐츠영역-->
+   <section>
+       
+       <!--EVENT-->
+       <article class="article_event">
+          
+          <!-- 메인슬라이드 -->
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="./img/main/event_img(2).png" alt="이벤트이미지1" id="event_img">
+                </li>
+                <li>
+                    <img src="./img/main/event_img(1).png" alt="이벤트이미지2">
+                </li>
+                <li>
+                    <img src="./img/main/event_img(DJ).jpg" alt="이벤트이미지3" id="event_img">
+                </li>
+                
+            </ul>
+        </div>
+            
+       </article>
+       
+       <!--BEST MENU-->
+       <article class="article_menu">
+           <h2>BEST MENU</h2>
+           
+           <div class="menu_inner">
+           <a href="a.html" title="이전이미지로"><i class="fas fa-angle-left"></i></a>
+           
+           <a href="a.html" title="bestmenu"><img src="img/main/bestmenu_img.jpg" alt="bestmenu"></a>
+           
+           <a href="a.html" title="다음이미지로"><i class="fas fa-angle-right"></i></a>
+           </div>
+           
+           <img src="./img/main/bestmenu_txt.png" alt="베스트메뉴 설명">
+       </article>
+       
+       
+       <!--LOCATION-->
+       <article class="article_location">
+       <img src="./img/main/구글맵이미지.png" alt="지도이미지">   
+        <div class="map_bottom">
+            <ul class="location_search">
+               <li>
+                <img src="./img/main/bbq_%EB%A7%A4%EC%9E%A5%EC%B0%BE%EA%B8%B0%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg" alt="매장찾기이미지1">
+               </li>
+               <li>
+                <img src="./img/main/bbq_%EB%A7%A4%EC%9E%A5%EC%B0%BE%EA%B8%B0%EC%9D%B4%EB%AF%B8%EC%A7%802.jpg" alt="매장찾기이미지2">
+               </li>
+            </ul>
+
+            <div class="txt_bar">
+                <div></div>
+                <p>
+                BBQ를 가까이에서 경험해 보세요. <br>
+                고객님과 가장 가까이 있는 매장을 찾아보세요. 
+                </p>
+            </div>
+
+            <div class="search_button">
+                <a href="a.html" title="">
+                    <div>매장찾기</div>
+                </a>
+            </div>
+        </div>
+       </article>
+       
+       
+       <!--SNS-->
+       <article class="article_sns">
+           <div>
+               <a href="a.html" title=""><img src="./img/main/sns_img_facebook.svg" alt="페이스북이미지"></a>
+               <div></div>
+               <a href="a.html" title=""><img src="./img/%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B6%81%EC%95%84%EC%9D%B4%EC%BD%98.svg" alt="페이스북아이콘" class="sns_icon1"></a><span class="t_sns1">페이스북</span>
+               <br>
+               <span>육즙가득 부드러움 최강자!</span>
+           </div>
+           
+           <div>
+               <a href="a.html" title=""><img src="./img/main/sns_img_instagram.svg" alt="인스타그램이미지"></a>
+               <a href="a.html" title=""><img src="./img/main/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%95%84%EC%9D%B4%EC%BD%98.svg" alt="" class="sns_icon2"></a><span class="t_sns2">인스타그램</span>
+               <div></div>
+               <br>
+               <span>세상에서 가장 빠삭한 치킨!</span>
+               
+           </div>
+           
+           <div>
+               <a href="a.html" title=""><img src="./img/main/sns_img_twitter.svg" alt="트위터이미지"></a>
+               <a href="a.html" title=""><img src="./img/main/%ED%8A%B8%EC%9C%84%ED%84%B0%EC%95%84%EC%9D%B4%EC%BD%98.svg" alt="트위터아이콘" class="sns_icon3"></a>
+               <span class="t_sns3">트위터</span>
+               <div></div>
+               <br>
+               <span>메뉴가 고민될 땐 반반치킨!</span>
+           </div>
+       </article>
+       
+   </section>
+   
+   
+   <!--푸터영역-->
+   <footer>
+      <div class="footer_inner">
+       <ul class="f_lnb">
+           <li><a href="a.html" title="">개인정보취급방침</a></li>
+           <li><a href="a.html" title="">이용약관</a></li>
+           <li><a href="a.html" title="">멤버십 약관</a></li>
+       </ul>
+       
+       <p>
+         주식회사 제너시스 비비큐 <br>
+         주소:서울시 000 0000 <br>
+         대표자:000 <br>
+         통신판매업신고:2010-0000-0000호 <br>
+         사업자등록번호:000-00-00000 <br>
+         고객센터:000-0000-0000
+       </p>
+       
+       <address>Copyright 2020&copy;GENESIS BBQ. All rights reserved.</address>
+      </div>
+      
+      <aside><a href="#top" title="위로바로가기"><img src="./img/main/top%EB%B2%84%ED%8A%BC.png" alt="위로가기"></a></aside>
+   </footer>
+   
+   
+   
+    <script>
+   // Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  },);
+}); 
+   </script>
+   
+   
+   
+</body>
+    
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
